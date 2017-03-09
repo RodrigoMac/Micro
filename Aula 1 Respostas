@@ -8,13 +8,20 @@
 
 3- Apresente aplicações de sistemas embarcados:
   * Para a indústria automotiva;
-  
-  
+      Painéis digitais, interfaces eletrônicas, sistemas automáticos (vidros, etc.).
   
   * Para eletrodomésticos;
+      Controlador de funções, temporizador.
   
   * Para automação industrial.
+      Sistemas sensoriais, controle robótico.
  
 4- Cite arquiteturas possíveis e as diferenças entre elas.
 
+  Arquitetura Harvard: Permite que as memórias RAM e ROM sejam acessadas simultaneamente, permitindo a leitura e a execução de instruções simultaneamente o que agiliza os processos e é mais suscetível à falhas.
+  
+  Arquitetura Von Neumann: Consegue apenas realizar uma ação por vez (leitura de instrução ou leitura/escrita de dados), menos eficiente, porém mais seguro.
+
 5- Por quê usamos o MSP430 na disciplina, ao invés de outro microcontrolador?
+  
+  Por causa do baixo consumo energético, registradores de uso aberto, processador eficiente que permite a realização de operações aritiméticas sem necessidade de registradores auxiliares.
