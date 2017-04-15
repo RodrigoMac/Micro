@@ -189,6 +189,44 @@ int Primalidade(unsigned int x){
 
 (b) Escreva a sub-rotina equivalente na linguagem Assembly do MSP430. A variável de entrada é fornecida pelo registrador R15, e o valor de saída também.
 
+	;Primalidade
+        
+        mov.w #17, R15;                  setando o numero
+        mov.w R15, R14;                 armazenando o valor
+        mov.w #2, R13;                  setando contador primario em 2
+        
+        clr.w R15;
+        
+        ; R15 = 0, 1, 2
+        cmp #0, R14;
+        jeq PRI;
+
+        cmp #1, R14;
+        jeq PRI;
+
+        cmp #2, R14;
+        jeq PRI;
+        
+        LOOP:
+        
+        mov.w R14, R10;                 armazenando copia do valor em R10
+        cmp R14, R13;
+        jge PRI;
+        
+        DIV:
+        sub.w R13, R10;
+        cmp R13, R10;
+        jge DIV;
+        inc.w R13;
+        cmp #0, R10;
+        jeq FIM;
+        jmp LOOP;
+
+        PRI:
+        mov.w #1, R15;
+  
+        FIM:
+
 6. Escreva uma função em C que calcula o duplo fatorial de n, representado por n!!. Se n for ímpar, n!! = 1*3*5*...*n, e se n for par, n!! = 2*4*6*...*n. Por exemplo, 9!! = 1*3*5*7*9 = 945 e 10!! = 2*4*6*8*10 = 3840. Além disso, 0!! = 1!! = 1.
 O protótipo da função é:
 
@@ -236,6 +274,8 @@ double ExpTaylor(double x){
 }
 
 (b) Escreva a sub-rotina equivalente na linguagem Assembly do MSP430, mas considere que os valores de entrada e de saída são inteiros de 16 bits. A variável de entrada é fornecida pelo registrador R15, e o valor de saída também.
+
+
 
 8. Escreva uma sub-rotina na linguagem Assembly do MSP430 que indica se um vetor esta ordenado de forma decrescente. Por exemplo:
 [5 4 3 2 1] e [90 23 20 10] estão ordenados de forma decrescente.
