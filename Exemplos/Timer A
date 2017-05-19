@@ -1,0 +1,12 @@
+void Atraso(volatile unsigned int x){
+  TACCRO = 1000-1;
+  TACTL = TASSEL_2 + ID_0 + MC_1;
+
+  while(x--){
+    while((TACTL & TAIFG) == 0){
+      TACTL &= ~TAIFG;
+    }
+    TACTL |= TACLR;
+    TACTL = MC_0;
+  }
+}
