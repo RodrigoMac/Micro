@@ -1,0 +1,17 @@
+FUNÇÕES
+
+  PX:
+
+    PXIN - 0 -> input low
+           1 -> input high
+
+    PXOUT - 0 -> output low / PXREN -> pulldown
+            1 -> output high / PXREN -> pullup
+
+    PXDIR - 0 -> input
+            1 -> output
+
+    PXREN - 0 -> pullup/pulldown resistor enable
+            1 -> pullup/pulldown resistor enable
+            
+  TIMER A:            
