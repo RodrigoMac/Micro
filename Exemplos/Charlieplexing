@@ -1,0 +1,33 @@
+#include <msp430g2553.h>
+#define CHPX1 BIT0
+#define CHPX2 BIT1
+#define CHPX3 BIT2
+#define CHPXS (CHPX1 + CHPX2 + CHPX3)
+#define CHPX_CLR P1OUT &= ~CHPXS
+
+void Charlie_on(char CHPX_OUT, char CHPX_ON){
+
+  P1OUT &= ~CHPXS;
+  P1DIR &= ~CHPXS;
+  P1DIR |= CHPX_OUT;
+  P1OUT |= CHPX_ON;
+
+}
+
+int main (void){
+
+  WDTCTL = WDTPW | WDTHOLD;
+  
+  while(1){
+  
+    Charlie_on(CHPX1 + CHPX2, CHPX1);
+    Charlie_on(CHPX1 + CHPX2, CHPX2);
+    Charlie_on(CHPX2 + CHPX3, CHPX2);
+    Charlie_on(CHPX2 + CHPX3, CHPX3);
+    Charlie_on(CHPX1 + CHPX3, CHPX1);
+    Charlie_on(CHPX1 + CHPX3, CHPX3);
+  
+  }
+
+return 0;
+}
