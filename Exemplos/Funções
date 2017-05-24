@@ -15,3 +15,28 @@ FUNÇÕES
             1 -> pullup/pulldown resistor enable
             
   TIMER A:            
+
+    TASSELX - 00 -> TACLK
+              01 -> ACLK
+              10 -> SMCLK
+              11 -> INCLK
+
+    IDX - 00 -> divide /1
+          01 -> divide /2
+          10 -> divide /4
+          11 -> divide /8
+
+    MCX - 00 -> stop mode
+          01 -> up mode
+          10 -> continuous mode
+          11 -> up/down mode
+         
+    TACLR - reseta contador, divisor e modo
+    
+    TAIE - 0 -> interrupt enable
+           1 -> interrupt disable
+           
+    TAIFG - 0 -> inerte
+            1 -> executa o interrupt
+         
+       
